@@ -66,8 +66,21 @@ font-weight: 600;
 }
 .modal-header .close{
     position: absolute;
-    padding: 2rem 1rem;
+    top: 10px !important;
     z-index: 99;
+}
+.textarea.form-control{
+    padding-left: 50px !important; 
+}
+.modal-body {
+ 
+    padding-bottom: 64px  !important;
+}
+.no_activity{
+    font-size: 14px;
+    font-weight: 600;
+    color: #7C7C7C;
+    TEXT-ALIGN: center;
 }
 .form-control:focus{
 

@@ -4,7 +4,7 @@
     <div class="col-6">
       <div class="head-deatils ">
         <p class="person_name"> Yamjal venkatesh</p>
-        <p class="task_details"> Due tasks</p>
+        <p class="task_details"> Due tasks {{due_tasks}}</p>
       </div>
     </div>
     <div class="col-6">
@@ -14,11 +14,11 @@
     </div>
   </div>
     <div class="task_body  ">
-        <!-- <p *ngIf="i = 0 "> list is empty</p> -->
-      <div class="task_list " (click)="onUpdate( list)" *ngFor="let list of taskList ;let i = index"  >  
+        <p *ngIf="due_tasks == 0 " class="no_activity"> No Activity Enterd</p>
+      <div class="task_list " (click)="onSelect( list, i)" *ngFor="let list of taskList ;let i = index"  >  
         <div class="row">
           <div class="col-6">
-            <p class="task_name">{{i}} {{list}}  </p>
+            <p class="task_name"> {{list}}  </p>
             <p class="due_date"> Due date is </p>
           </div>
           <div class="col-6">
@@ -38,7 +38,7 @@
       </div>
       
 </div>
-<div class="container " *ngIf="page_status === !true">
+<div class=" text_area" *ngIf="page_status === !true">
   <div class="modal-header">
     <button type="button" class="close" (click)="onClose()">&times;</button>
   </div>
