@@ -7,6 +7,10 @@ html{
 .person_name{
 font-weight: 600;
 }
+
+.button:focus{
+    outline: none !important;
+}
 .task_details{
 
         font-size: 14px;
@@ -54,6 +58,7 @@ font-weight: 600;
     height: 50px;
     border: none;
     box-shadow: 0px 6px 25px -4px rgba(117,115,117,1);
+    background: #0062cc;
 }
 .modal-header{
     border: none !important;

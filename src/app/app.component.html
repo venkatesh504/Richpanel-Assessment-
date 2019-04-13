@@ -1,5 +1,5 @@
 
-<div class="container web_app">
+<div class="container web_app" *ngIf="page_status == true">
   <div class="row person_head ">
     <div class="col-6">
       <div class="head-deatils ">
@@ -14,11 +14,11 @@
     </div>
   </div>
     <div class="task_body  ">
-        <!-- <p *ngIf="due_index = 0 "> list is empty</p> -->
-      <div class="task_list " *ngFor="let list of taskList ;let due_index = index"  >  
+        <!-- <p *ngIf="i = 0 "> list is empty</p> -->
+      <div class="task_list " (click)="onUpdate( list)" *ngFor="let list of taskList ;let i = index"  >  
         <div class="row">
           <div class="col-6">
-            <p class="task_name">{{list}}  </p>
+            <p class="task_name">{{i}} {{list}}  </p>
             <p class="due_date"> Due date is </p>
           </div>
           <div class="col-6">
@@ -32,47 +32,38 @@
     </div>
 
   <div class="float_btn">
-      <button type="button" class="add_btn btn-primary" data-toggle="modal" data-target="#myModal">
+      <button  class="add_btn flot_button  "  (click)="gopage()">
           <img src="../assets/images/add_white.png" alt="">
         </button>
       </div>
+      
 </div>
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-          <div class="form-group">
-              <!-- <label for="comment">Comment:</label> -->
-              <textarea class="form-control" rows="5" id="comment" [(ngModel)]="task_name" name="text" placeholder=" what you want to do"></textarea>
-              <div class="input-group-append">
-                 <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
-                </div>
-                <div class="input-group-append">
-                    <img src="./../assets/images/calendar-smal.png"  alt="" class="appednd-calendar">
-                  </div>
-            </div>    
-      </div>
-      <!-- Modal footer -->
-      <div class="modal-footer bg-primary">
-        <div class="add_task">
-            <a  class=" text-center "   (click)="add_task()" data-dismiss="modal"><img src="../assets/images/add_white.png" alt=""></a>
-        </div>
-       
-      </div>
-
-    </div>
+<div class="container " *ngIf="page_status === !true">
+  <div class="modal-header">
+    <button type="button" class="close" (click)="onClose()">&times;</button>
   </div>
+
+  <!-- Modal body -->
+  <div class="modal-body">
+      <div class="form-group">
+
+          
+          <textarea class="form-control" rows="5"    id="comment" [(ngModel)]="task_name" name="text" placeholder=" what you want to do" autofocus ></textarea>
+          <div class="input-group-append">
+             <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
+            </div>
+            <div class="input-group-append">
+                <img src="./../assets/images/calendar-smal.png"  alt="" class="appednd-calendar">
+              </div>
+        </div>    
+  </div>
+  <!-- Modal footer -->
+  <div class="modal-footer bg-primary">
+    <div class="add_task">
+        <a  class=" text-center "   (click)="add_task()"   data-dismiss="modal"><img src="../assets/images/add_white.png" alt=""></a>
+    </div>
+   
+  </div>
+
 </div>
-<!-- <button mat-raised-button (click)="openBottomSheet()">Open file</button> -->
-
-
-
 <router-outlet></router-outlet>
