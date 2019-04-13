@@ -1,10 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
 
 <div class="container web_app">
-
-  <div class="row person_head">
+  <div class="row person_head ">
     <div class="col-6">
-      <div class="head-deatils">
+      <div class="head-deatils ">
         <p class="person_name"> Yamjal venkatesh</p>
         <p class="task_details"> Due tasks</p>
       </div>
@@ -16,11 +14,12 @@
     </div>
   </div>
     <div class="task_body  ">
-      <div class="task_list "  >  
+        <!-- <p *ngIf="due_index = 0 "> list is empty</p> -->
+      <div class="task_list " *ngFor="let list of taskList ;let due_index = index"  >  
         <div class="row">
           <div class="col-6">
-            <p class="task_name">Task name  </p>
-            <p class="due_date"> Due date is</p>
+            <p class="task_name">{{list}}  </p>
+            <p class="due_date"> Due date is </p>
           </div>
           <div class="col-6">
             <div class="time_icon">
@@ -29,17 +28,15 @@
           </div>
         </div>
       </div>
+
     </div>
 
   <div class="float_btn">
       <button type="button" class="add_btn btn-primary" data-toggle="modal" data-target="#myModal">
           <img src="../assets/images/add_white.png" alt="">
         </button>
-    <!-- <button class="btn"> <img src="../assets/images/add.png" alt="" class="image-fluid"></button> -->
-  </div>
+      </div>
 </div>
-
-
 <!-- The Modal -->
 <div class="modal" id="myModal">
   <div class="modal-dialog">
@@ -56,7 +53,7 @@
               <!-- <label for="comment">Comment:</label> -->
               <textarea class="form-control" rows="5" id="comment" [(ngModel)]="task_name" name="text" placeholder=" what you want to do"></textarea>
               <div class="input-group-append">
-                 <img src="./../assets/images/calendar-smal.png" alt="" class="appednd-brower">
+                 <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
                 </div>
                 <div class="input-group-append">
                     <img src="./../assets/images/calendar-smal.png"  alt="" class="appednd-calendar">
@@ -66,7 +63,7 @@
       <!-- Modal footer -->
       <div class="modal-footer bg-primary">
         <div class="add_task">
-            <a  class=" text-center "   onclick="add_task()" data-dismiss="modal"><img src="../assets/images/add_white.png" alt=""></a>
+            <a  class=" text-center "   (click)="add_task()" data-dismiss="modal"><img src="../assets/images/add_white.png" alt=""></a>
         </div>
        
       </div>

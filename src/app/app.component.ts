@@ -10,17 +10,15 @@ export class AppComponent {
   title = 'Webapp';
   taskList : any = list;
   task_name:any;
-  // constructor(private bottomSheet: MatBottomSheet) {}
+  due_indexs : any;
+  // constructor() {}
 
-  // openBottomSheet(): void {
-  //   this.bottomSheet.open(BottomSheetOverviewExampleSheet);
-  // }
-
-  
+  d: Date = new Date();  
   // console.log(taskList);
   add_task(){
     console.log( this.task_name);
-    
+   this.taskList.push(this.task_name);
+  
   }
 }
 // @Component({
