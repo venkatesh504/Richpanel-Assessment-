@@ -1,21 +1,81 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+<div class="container web_app">
+
+  <div class="row person_head">
+    <div class="col-6">
+      <div class="head-deatils">
+        <p class="person_name"> Yamjal venkatesh</p>
+        <p class="task_details"> Due tasks</p>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="person_img">
+        <img src="../assets/images/man-388104_960_720.jpg" alt="" class="rounded-circle person_image">
+      </div>
+    </div>
+  </div>
+    <div class="task_body  ">
+      <div class="task_list "  >  
+        <div class="row">
+          <div class="col-6">
+            <p class="task_name">Task name  </p>
+            <p class="due_date"> Due date is</p>
+          </div>
+          <div class="col-6">
+            <div class="time_icon">
+              <img src="../assets/images/set-alarm.png" alt="" class="image-fluid alarm-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="float_btn">
+      <button type="button" class="add_btn btn-primary" data-toggle="modal" data-target="#myModal">
+          <img src="../assets/images/add_white.png" alt="">
+        </button>
+    <!-- <button class="btn"> <img src="../assets/images/add.png" alt="" class="image-fluid"></button> -->
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <div class="form-group">
+              <!-- <label for="comment">Comment:</label> -->
+              <textarea class="form-control" rows="5" id="comment" [(ngModel)]="task_name" name="text" placeholder=" what you want to do"></textarea>
+              <div class="input-group-append">
+                 <img src="./../assets/images/calendar-smal.png" alt="" class="appednd-brower">
+                </div>
+                <div class="input-group-append">
+                    <img src="./../assets/images/calendar-smal.png"  alt="" class="appednd-calendar">
+                  </div>
+            </div>    
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer bg-primary">
+        <div class="add_task">
+            <a  class=" text-center "   onclick="add_task()" data-dismiss="modal"><img src="../assets/images/add_white.png" alt=""></a>
+        </div>
+       
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- <button mat-raised-button (click)="openBottomSheet()">Open file</button> -->
+
+
 
 <router-outlet></router-outlet>
