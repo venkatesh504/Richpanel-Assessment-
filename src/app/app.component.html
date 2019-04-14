@@ -41,33 +41,37 @@
 
 </div>
 <div class=" text_area" *ngIf="page_status === !true">
-  <div class="modal-header">
-    <button type="button" class="close" (click)="onClose()">&times;</button>
-  </div>
+  <form action="">
+      <div class="modal-header">
+          <button type="button" class="close" (click)="onClose()">&times;</button>
+        </div>
+      
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="form-group">
+      
+      
+            <textarea class="form-control" rows="5" id="comment" [(ngModel)]="task_name" name="text"
+              placeholder=" what you want to do" autofocus></textarea>
+            <div class="input-group-append">
+              <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
+            </div>
+            <div class="input-group-append">
+              <img src="./../assets/images/calendar-smal.png" alt="" class="appednd-calendar">
+            </div>
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer " style="    border-bottom-right-radius: none !important;
+        border-bottom-left-radius:none !important;">
+          <div class="add_task">
+            <a class=" text-center " (click)="add_task()" data-dismiss="modal"><img src="../assets/images/add_white.png"
+                alt=""></a>
+          </div>
+      
+        </div>
+  </form>
 
-  <!-- Modal body -->
-  <div class="modal-body">
-    <div class="form-group">
-
-
-      <textarea class="form-control" rows="5" id="comment" [(ngModel)]="task_name" name="text"
-        placeholder=" what you want to do" autofocus></textarea>
-      <div class="input-group-append">
-        <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
-      </div>
-      <div class="input-group-append">
-        <img src="./../assets/images/calendar-smal.png" alt="" class="appednd-calendar">
-      </div>
-    </div>
-  </div>
-  <!-- Modal footer -->
-  <div class="modal-footer bg-primary">
-    <div class="add_task">
-      <a class=" text-center " (click)="add_task()" data-dismiss="modal"><img src="../assets/images/add_white.png"
-          alt=""></a>
-    </div>
-
-  </div>
 
 </div>
 <!-- <div class="container">
