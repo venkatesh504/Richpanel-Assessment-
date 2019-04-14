@@ -1,4 +1,3 @@
-
 <div class="container web_app" *ngIf="page_status == true">
   <div class="row person_head ">
     <div class="col-6">
@@ -13,30 +12,33 @@
       </div>
     </div>
   </div>
-    <div class="task_body  ">
-        <p *ngIf="due_tasks == 0 " class="no_activity"> No Activity Enterd</p>
-      <div class="task_list " (click)="onSelect( list, i)" *ngFor="let list of taskList ;let i = index"  >  
-        <div class="row">
-          <div class="col-6">
-            <p class="task_name"> {{list}}  </p>
-            <p class="due_date"> Due date is </p>
-          </div>
-          <div class="col-6">
-            <div class="time_icon">
-              <img src="../assets/images/set-alarm.png" alt="" class="image-fluid alarm-icon">
-            </div>
+  <div class="task_body  ">
+    <p *ngIf="due_tasks == 0 " class="no_activity"> No Activity Enterd</p>
+    <div class="task_list " (click)="onSelect( list, i)" draggable="true" (dragstart)="drag($event , i)" id="list" *ngFor="let list of taskList ;let i = index">
+      <div class="row">
+        <div class="col-6">
+          <p class="task_name"> {{list}} </p>
+          <p class="due_date"> Due date is </p>
+        </div>
+        <div class="col-6">
+          <div class="time_icon">
+            <img src="../assets/images/set-alarm.png" alt="" class="image-fluid alarm-icon">
           </div>
         </div>
       </div>
-
+    
     </div>
+    <div  *ngIf="dragStatus== false || dragStatus === !true" id="dropdiv" (drop)="drop($event ,index_list)" (dragover)="allowDrop($event , i)">
+    </div>
+  
+  </div>
 
   <div class="float_btn">
-      <button  class="add_btn flot_button  "  (click)="gopage()">
-          <img src="../assets/images/add_white.png" alt="">
-        </button>
-      </div>
-      
+    <button class="add_btn flot_button  " (click)="gopage()">
+      <img src="../assets/images/add_white.png" alt="">
+    </button>
+  </div>
+
 </div>
 <div class=" text_area" *ngIf="page_status === !true">
   <div class="modal-header">
@@ -45,25 +47,44 @@
 
   <!-- Modal body -->
   <div class="modal-body">
-      <div class="form-group">
+    <div class="form-group">
 
-          
-          <textarea class="form-control" rows="5"    id="comment" [(ngModel)]="task_name" name="text" placeholder=" what you want to do" autofocus ></textarea>
-          <div class="input-group-append">
-             <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
-            </div>
-            <div class="input-group-append">
-                <img src="./../assets/images/calendar-smal.png"  alt="" class="appednd-calendar">
-              </div>
-        </div>    
+
+      <textarea class="form-control" rows="5" id="comment" [(ngModel)]="task_name" name="text"
+        placeholder=" what you want to do" autofocus></textarea>
+      <div class="input-group-append">
+        <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
+      </div>
+      <div class="input-group-append">
+        <img src="./../assets/images/calendar-smal.png" alt="" class="appednd-calendar">
+      </div>
+    </div>
   </div>
   <!-- Modal footer -->
   <div class="modal-footer bg-primary">
     <div class="add_task">
-        <a  class=" text-center "   (click)="add_task()"   data-dismiss="modal"><img src="../assets/images/add_white.png" alt=""></a>
+      <a class=" text-center " (click)="add_task()" data-dismiss="modal"><img src="../assets/images/add_white.png"
+          alt=""></a>
     </div>
-   
+
   </div>
 
 </div>
+<!-- <div class="container">
+  <div id="maindiv">
+    <div id="dragdiv">
+      <h3>Drag from here</h3>
+      <ul id="allItems" runat="server">
+        <li id="node1" draggable="true" (dragstart)="drag($event)">Item A</li>
+        <li id="node2" draggable="true" (dragstart)="drag($event)">Item B</li>
+        <li id="node3" draggable="true" (dragstart)="drag($event)">Item C</li>
+        <li id="node4" draggable="true" (dragstart)="drag($event)">Item D</li>
+        <li id="node5" draggable="true" (ndragstart)="drag($event)">Item E</li>
+      </ul>
+    </div>
+    <div id="dropdiv" (drop)="drop($event)" (dragover)="allowDrop($event)">
+      <h3>Drop here to remove</h3>
+    </div>
+  </div>
+</div> -->
 <router-outlet></router-outlet>
