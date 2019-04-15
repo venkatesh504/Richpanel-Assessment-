@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     DragAndDropModule,
-    FormsModule
+    FormsModule,
 
   ],
   providers: [],

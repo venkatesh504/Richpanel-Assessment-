@@ -15,7 +15,7 @@ color: #484848;
 }
 .task_details{
 
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 500;
         color: #7c7c7c;
 }
@@ -31,8 +31,8 @@ color: #484848;
     float: right;
 }
 .due_date{
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     color: #7c7c7c;
 }
 .task_name{
@@ -44,6 +44,7 @@ textarea.form-control {
     padding: 20px;
     font-size: 18px;
 }
+
 .task_list
 {
 
@@ -61,7 +62,7 @@ textarea.form-control {
     width: 50px;
     height: 50px;
     border: none;
-    box-shadow: 0px 6px 25px -4px rgba(117,115,117,1);
+    box-shadow: 0px 6px 25px -10spx rgba(117,115,117,1);
     background: #0062cc;
     position: fixed;
     bottom: 3%;
@@ -74,7 +75,7 @@ textarea.form-control {
     width: 50px;
     height: 50px;
     border: none;
-    box-shadow: 0px 6px 25px -4px rgba(117,115,117,1);
+    box-shadow: 0px 6px 25px -10px rgba(117,115,117,1);
     background: red;
     position: fixed;
     bottom: 3%;
@@ -216,6 +217,20 @@ textarea.form-control {
         50%  {opacity: 0.8;}
         100% {opacity: 1;}
       }
+      .plusOne{
+        animation-delay: 100ms;
+        animation-timing-function: ease-in;
+        animation-name: plus_one;
+        animation-duration: 300ms;
+      }
+      @keyframes plus_one{
+        0%   {transform:rotate(0deg); opacity: 0;}
+     
+        50%  {transform:rotate(180deg);opacity: 0.3;}
+        75%  {transform:rotate(270deg);opacity: 0.6;}
+ 
+        100% {transform:rotate(360deg);opacity: 1;}
+  }
       @keyframes rotate{
             0%   {transform:rotate(0deg); opacity: 0;}
          

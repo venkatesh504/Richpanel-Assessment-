@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DropEvent } from 'angular-draggable-droppable';
-import { Plugins } from 'protractor/built/plugins';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +18,8 @@ export class AppComponent {
   droppedData: string;
   addclick: boolean = false;
   plus:boolean = true;
+  pluserotate:boolean=false;
+
   // this function is for updating the stored records
   onSelect(list, i) {
     this.newTask = false;
@@ -50,10 +52,14 @@ export class AppComponent {
   // After leaves the drag.
   dragEnd(event, index) {
     this.deleteEnable = false;
+    console.log("draing");
+    
   }
   // Enable the delete button after drag
   dragStart() {
     this.deleteEnable = true;
+    console.log("drag started");
+    
     
   }
   // Deleting the element from array after drop.
@@ -63,5 +69,15 @@ export class AppComponent {
     setTimeout(() => {
       this.droppedData = '';
     }, 2000);
+this.plus= !this.plus;
+console.log("drag ended");
+
   }
+
+// this.myModel = 'An editable text';
+// myValidator = function(newValue)
+// {
+//   // a simple required field:
+//   return !!newValue;
+// }
 }
