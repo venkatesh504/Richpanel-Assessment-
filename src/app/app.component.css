@@ -53,8 +53,10 @@
 } */
 
 .drop-over-active {
-  border: dashed 1px black;
-  background-color: lightgreen;
+  transform: scale(1.2);
+  background-color: red;
+  z-index: 54;
+
 }
 
 /* .drag-active {

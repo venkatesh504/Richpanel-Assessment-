@@ -42,11 +42,11 @@
           <span [hidden]="droppedData" >Drop here</span>
           <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
         </div> -->
-      <div class="add_btn" (click)="gopage()">
+      <div class="add_btn" (click)="gopage()"  >
         <img src="../assets/images/add_white.png" alt="" class="pluse-symble">
       </div>
       <div class="delete_btn"  mwlDroppable (drop)="onDrop($event)"
-      dragOverClass="drop-over-active"> <img src="../assets/images/add_white.png" alt="" class="pluse-symble">Hello</div>
+      dragOverClass="drop-over-active"> <img src="../assets/images/add_white.png" alt="" class="pluse-symble"></div>
     </div>
 
 
@@ -80,9 +80,9 @@
       </div>
     </div>
     <!-- Modal footer -->
-    <div class="modal-footer ">
-      <div class="add_task">
-        <button class="  btn btn-primary text-center " [disabled]="f.form.pristine || f.form.invalid"
+    <div class="modal-footer "  [ngClass]="{'spreed': true}">
+      <div class="add_task"  >
+        <button class="  btn btn-primary text-center "   [ngClass]="{'spreed': true}"[disabled]="f.form.pristine || f.form.invalid"
           (click)="add_task(taskName)"><img src="../assets/images/add_white.png" alt=""></button>
       </div>
 

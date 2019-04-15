@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DropEvent } from 'angular-draggable-droppable';
+import { Plugins } from 'protractor/built/plugins';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +17,7 @@ export class AppComponent {
   pageStatus: boolean = true;
   droppedData: string;
   addclick: boolean = false;
+  plus:boolean = true;
   // this function is for updating the stored records
   onSelect(list, i) {
     this.newTask = false;
@@ -26,6 +28,8 @@ export class AppComponent {
   // closing the task popup
   onClose() {
     this.pageStatus = true;
+    this.plus = !this.plus;
+    return this.plus 
   }
   // Rediction of add for add button.
   gopage() {
@@ -50,6 +54,7 @@ export class AppComponent {
   // Enable the delete button after drag
   dragStart() {
     this.deleteEnable = true;
+    
   }
   // Deleting the element from array after drop.
   onDrop({ dropData }: DropEvent<string>): void {

@@ -66,6 +66,7 @@ textarea.form-control {
     position: fixed;
     bottom: 3%;
     right: 44%;
+    z-index: 4;
 }
 .delete_btn {
     /* display: none; */
@@ -77,7 +78,8 @@ textarea.form-control {
     background: red;
     position: fixed;
     bottom: 3%;
-    right: 55%;
+    right: 44%;
+    z-index: 2;
 }
 .add_btn:hover{
     transition-delay: 200ms;
@@ -192,31 +194,37 @@ textarea.form-control {
       .spreed{
           background:#0062cc;
           animation-name: add-btn;
-          animation-duration: 200ms;
+          animation-timing-function: ease-in;
+          animation-duration: 1s;
+      }
+      .plus_btn{
+        animation-name: plus_btn;
+        animation-timing-function: ease-in;
+        animation-duration: 1s;
+      }
+      @keyframes plus_btn{
+        0%   { transform: scale(50.0)}
+        25%  {transform: scale(30.0)}
+        50%  {transform: scale(20.0)}
+        50%  {transform: scale(10.0)}
+        100% {transform: scale(50.0);}
       }
       @keyframes add-btn{
-        0%   {transform: scale(1.02);}
-        25%  {transform: scale(3.05);}
-        50%  {transform: scale(6.08);}
-        100% {transform: scale(20.09);}
-      }
-      @keyframes rotate{
-        0%   {transform:rotate(50deg); opacity: 0;}
-        25%  {transform: rotate(100deg); opacity: 0.5;}
-        50%  {transform:rotate(150deg);opacity: 0.9;}
+        0%   {opacity: 0;}
+        25%  {opacity: 0.2;}
+        50%  {opacity: 0.5;}
+        50%  {opacity: 0.8;}
         100% {opacity: 1;}
       }
-      @keyframes text-area{
-        0%   { opacity: 1;}
-        25%  { opacity: 0.4.;}
-        50%  {opacity:0.7;}
-        100% {opacity: 0;}
+      @keyframes rotate{
+            0%   {transform:rotate(0deg); opacity: 0;}
+         
+            50%  {transform:rotate(180deg);opacity: 0.3;}
+            75%  {transform:rotate(270deg);opacity: 0.6;}
+     
+            100% {transform:rotate(360deg);opacity: 1;}
       }
-      .text_area{
-        animation-name: text-area;
-        animation-duration: 1s;
-        animation-delay: 0ms;
-      }
+
       .circle-btn:hover{
         width: 500px;
       }
@@ -232,7 +240,10 @@ textarea.form-control {
       .delay{
           transition-delay: 20s;
       }
+
       .close{
+          animation-delay: 200ms;
+          animation-timing-function: ease-in;
           animation-name: rotate;
-          animation-duration: 2s;
+          animation-duration: 1s;
       }
