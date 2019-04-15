@@ -52,10 +52,10 @@
   justify-content: center;
 } */
 
-/* .drop-over-active {
+.drop-over-active {
   border: dashed 1px black;
   background-color: lightgreen;
-} */
+}
 
 /* .drag-active {
   z-index: 3;
