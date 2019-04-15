@@ -1,25 +1,62 @@
-#maindiv{width:500px;height:300px; border:1px solid #f2f2f2;padding:10px;}
-#dragdiv{width:180px;float:left;}
+#maindiv {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #f2f2f2;
+  padding: 10px;
+}
 
-#dropdiv{width: 50px;
-    position: fixed;
-    height: 50px;
-    bottom: 3%;
-    /* float: left; */
-    background-color: #ff9696;
-    /* margin-left: 50px; */
-    border-radius: 50%;
-    display: block;
-    /* right: 20px; */
-    right: 44%;
-    margin: auto;
-    z-index: 99;
-    /* justify-content: center !important; */}
+#dragdiv {
+  width: 180px;
+  float: left;
+}
 
-    .modal-footer{
-        justify-content: center !important;
-        padding: 10px !important;
-        border-bottom-right-radius: none !important;
-        border-bottom-left-radius: none !important;
-        background: #007bff!important
-    }
+#dropdiv {
+  width: 50px;
+  position: fixed;
+  height: 50px;
+  bottom: 3%;
+  /* float: left; */
+  background-color: #ff9696;
+  /* margin-left: 50px; */
+  border-radius: 50%;
+  display: block;
+  /* right: 20px; */
+  right: 44%;
+  margin: auto;
+  z-index: 99;
+  /* justify-content: center !important; */
+}
+
+.modal-footer {
+  justify-content: center !important;
+  padding: 10px !important;
+  border-bottom-right-radius: none !important;
+  border-bottom-left-radius: none !important;
+  background: #007bff !important
+}
+
+/* [mwlDroppable] {
+  background-color: red;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  top: 50px;
+  left: 100px;
+} */
+/* [mwlDroppable] {
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* .drop-over-active {
+  border: dashed 1px black;
+  background-color: lightgreen;
+} */
+
+/* .drag-active {
+  z-index: 3;
+} */

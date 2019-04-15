@@ -67,6 +67,17 @@ textarea.form-control {
     bottom: 3%;
     right: 44%;
 }
+.delete_btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    box-shadow: 0px 6px 25px -4px rgba(117,115,117,1);
+    background: red;
+    position: fixed;
+    bottom: 3%;
+    right: 44%;
+}
 .add_btn:hover{
     transition-delay: 200ms;
     transform: scale(0.95)

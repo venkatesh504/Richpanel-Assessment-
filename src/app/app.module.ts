@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 
 import { FormsModule } from '@angular/forms';
 
@@ -14,8 +15,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-
+    DragAndDropModule,
     FormsModule
 
   ],
