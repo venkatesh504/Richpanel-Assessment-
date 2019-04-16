@@ -16,13 +16,14 @@
   <div class="task_body">
     <p *ngIf="totalTasks.length <= 0" class="no_activity"> No Activity Enterd</p>
     <!-- <div mwlDraggable (dragEnd)="dragEnd($event, i)">Drag me!</div> -->
-    <div *ngFor="let list of totalTasks ;let i = index">
+    <div *ngFor="let list of totalTasks ;let i = index" (click)="onSelect(list, i)">
       <div class="row" class="task_list" mwlDraggable dropData='i' (mousedown)='dragStart()' dragActiveClass="drag-active" (dragEnd)="dragEnd($event, i)" draggable="true">
         <div class="row">
             
           <div class="col-6">
 
-            <p class="task_name" (click)="onSelect(list, i)"> {{list}} </p>
+            <p class="task_name"> {{list}} </p>
+            <!-- <input *ngIf="taskName === list" type="text" name='task_Name' [(ngModel)]="taskName"> -->
             <p class="due_date"> Due date is {{date | date: 'dd/MM/yyyy'}}</p>
           </div>
           <div class="col-6">

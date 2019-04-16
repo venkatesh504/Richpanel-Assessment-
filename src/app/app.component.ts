@@ -9,6 +9,7 @@ import { DropEvent } from 'angular-draggable-droppable';
 export class AppComponent {
   title = 'To Do List';
   totalTasks: any = [];
+  inLineEdit: any;
   newTask = true;
   date = new Date(Date.now());
   constIndex: any;
@@ -19,14 +20,18 @@ export class AppComponent {
   addclick: boolean = false;
   plus:boolean = true;
   pluserotate:boolean=false;
-
+index_value:any
   // this function is for updating the stored records
   onSelect(list, i) {
+    // event.stopPropagation();
+    console.log('Clicked!')
+    this.inLineEdit = list
     this.newTask = false;
     this.constIndex = i;
     this.taskName = list;
     this.pageStatus = !this.pageStatus;
   }
+
   // closing the task popup
   onClose() {
     this.pageStatus = true;
@@ -52,8 +57,10 @@ export class AppComponent {
   // After leaves the drag.
   dragEnd(event, index) {
     this.deleteEnable = false;
-    console.log("draing");
-    
+    this.index_value = index;
+   return this.index_value ;
+
+   
   }
   // Enable the delete button after drag
   dragStart() {
@@ -65,9 +72,10 @@ export class AppComponent {
   // Deleting the element from array after drop.
   onDrop({ dropData }: DropEvent<string>): void {
     this.droppedData = dropData;
-    this.totalTasks.splice(dropData, 1);
-    setTimeout(() => {
+    this.totalTasks.splice(this.index_value, 1);
+    setTimeout(( ) => {
       this.droppedData = '';
+      
     }, 2000);
 this.plus= !this.plus;
 console.log("drag ended");
