@@ -48,7 +48,12 @@ textarea.form-control {
     padding: 15px !important;
     text-align: left !important;
 }
+<<<<<<< HEAD
 .task_list{
+=======
+.task_list
+{
+>>>>>>> 12e28423ab4532dad4ecac01c120257346ee73b0
 
     background: white;
     box-shadow: 0 0 5px -1px;
@@ -84,10 +89,15 @@ textarea.form-control {
     color: #7C7C7C;
     TEXT-ALIGN: center;
 }
+<<<<<<< HEAD
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #7c7c7c !important;  
     }
     .form-control:focus{
+=======
+
+.form-control:focus{
+>>>>>>> 12e28423ab4532dad4ecac01c120257346ee73b0
 
         background-color: #fff;
         border:none !important;
@@ -98,6 +108,23 @@ textarea.form-control {
         border: none !important;
 
     }
+<<<<<<< HEAD
+=======
+    .modal-footer{
+        justify-content: center !important;
+        padding: 10px !important;
+        border-bottom-right-radius: none !important;
+        border-bottom-left-radius: none !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition-delay: 2s !important;
+    }
+    .add_task{
+        transition-delay: 3s;
+    }
+>>>>>>> 12e28423ab4532dad4ecac01c120257346ee73b0
 
     .appednd-calendar{
         position: absolute;

@@ -54,6 +54,7 @@ margin: auto !important;
 width: 100%;
 }
 
+<<<<<<< HEAD
 /* @keyframes circle_div{
   0%   {transform: scale(1);transform-origin: center; }
   50%  {transform: scale(10.5);transform-origin: center;}
@@ -193,3 +194,5 @@ background: #0062cc;
   100% {opacity: 1;}
 }
 
+=======
+>>>>>>> 12e28423ab4532dad4ecac01c120257346ee73b0
