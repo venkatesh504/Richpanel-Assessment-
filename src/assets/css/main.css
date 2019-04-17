@@ -1,4 +1,4 @@
-html{
+html,.web_app{
     font-family: 'Poppins', sans-serif;
 }
  p {
@@ -6,10 +6,9 @@ html{
 }
 .person_name{
 font-weight: 500;
-font-size: 18px;
+font-size: 16px;
 color: #484848;
 }
-
 .button:focus{
     outline: none !important;
 }
@@ -44,43 +43,18 @@ textarea.form-control {
     padding: 20px;
     font-size: 18px;
 }
-
-.task_list
-{
+.press_btn{
+    width: 100% !important;
+    padding: 15px !important;
+    text-align: left !important;
+}
+.task_list{
 
     background: white;
     box-shadow: 0 0 5px -1px;
     padding: 10px;
     box-shadow: 0px 0px 16px -2px rgba(189,187,189,1);
     margin-bottom: 10px;
-}
-
-
-
-.add_btn{
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: none;
-    box-shadow: 0px 6px 25px -10spx rgba(117,115,117,1);
-    background: #0062cc;
-    position: fixed;
-    bottom: 3%;
-    right: 44%;
-    z-index: 4;
-}
-.delete_btn {
-    /* display: none; */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: none;
-    box-shadow: 0px 6px 25px -10px rgba(117,115,117,1);
-    background: red;
-    position: fixed;
-    bottom: 3%;
-    right: 44%;
-    z-index: 2;
 }
 .add_btn:hover{
     transition-delay: 200ms;
@@ -103,17 +77,17 @@ textarea.form-control {
 .textarea.form-control{
     padding-left: 50px !important; 
 }
-/* .modal-body {
- 
-    padding-bottom: 64px  !important;
-} */
+
 .no_activity{
     font-size: 14px;
     font-weight: 600;
     color: #7C7C7C;
     TEXT-ALIGN: center;
 }
-.form-control:focus{
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #7c7c7c !important;  
+    }
+    .form-control:focus{
 
         background-color: #fff;
         border:none !important;
@@ -124,19 +98,6 @@ textarea.form-control {
         border: none !important;
 
     }
-    .modal-footer{
-        justify-content: center !important;
-        padding: 10px !important;
-        border-bottom-right-radius: none !important;
-        border-bottom-left-radius: none !important;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    .add_task{
-        transition-delay: 200ms;
-    }
 
     .appednd-calendar{
         position: absolute;
@@ -146,27 +107,7 @@ textarea.form-control {
         position: absolute;
         right: 60px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*gfkghkjghsdgjdsghsdjhsg*/
-
 
       .fixed_btn{
           position: fixed;
@@ -192,12 +133,7 @@ textarea.form-control {
           background: #0062cc;
           transition: width 2s;
       }
-      .spreed{
-          background:#0062cc;
-          animation-name: add-btn;
-          animation-timing-function: ease-in;
-          animation-duration: 1s;
-      }
+  
       .plus_btn{
         animation-name: plus_btn;
         animation-timing-function: ease-in;
@@ -210,13 +146,7 @@ textarea.form-control {
         50%  {transform: scale(10.0)}
         100% {transform: scale(50.0);}
       }
-      @keyframes add-btn{
-        0%   {opacity: 0;}
-        25%  {opacity: 0.2;}
-        50%  {opacity: 0.5;}
-        50%  {opacity: 0.8;}
-        100% {opacity: 1;}
-      }
+     
       .plusOne{
         animation-delay: 100ms;
         animation-timing-function: ease-in;
@@ -230,7 +160,7 @@ textarea.form-control {
         75%  {transform:rotate(270deg);opacity: 0.6;}
  
         100% {transform:rotate(360deg);opacity: 1;}
-  }
+      }
       @keyframes rotate{
             0%   {transform:rotate(0deg); opacity: 0;}
          
@@ -239,14 +169,13 @@ textarea.form-control {
      
             100% {transform:rotate(360deg);opacity: 1;}
       }
-
       .circle-btn:hover{
         width: 500px;
       }
       .pluse-symble{
          position: absolute;
-          bottom: 16px;
-          left: 17px;
+          bottom: 17px;
+          left: 16px;
       }
       .scale{
        display: block;
@@ -255,10 +184,10 @@ textarea.form-control {
       .delay{
           transition-delay: 20s;
       }
-
       .close{
           animation-delay: 200ms;
           animation-timing-function: ease-in;
           animation-name: rotate;
           animation-duration: 1s;
       }
+   
