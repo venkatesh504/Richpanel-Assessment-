@@ -18,17 +18,11 @@ export class AppComponent {
   pageStatus: boolean = true;
   droppedData: string;
   addclick: boolean = false;
-<<<<<<< HEAD
   plus: any ;
   pluserotate: boolean = false;
   circle_status: any = "none";
   index_value: any;
   delete_class:any;
-=======
-  plus:boolean = true;
-  pluserotate:boolean=false;
-index_value:any
->>>>>>> 12e28423ab4532dad4ecac01c120257346ee73b0
   // this function is for updating the stored records
   onSelect(list, i) {
     // event.stopPropagation();
@@ -77,14 +71,8 @@ index_value:any
   dragEnd(event, index) {
     this.deleteEnable = false;
     this.index_value = index;
-<<<<<<< HEAD
     console.log("end working");
     return this.index_value;
-=======
-   return this.index_value ;
-
-   
->>>>>>> 12e28423ab4532dad4ecac01c120257346ee73b0
   }
   // Enable the delete button after drag
   dragStart() {
@@ -94,17 +82,8 @@ index_value:any
   onDrop({ dropData }: DropEvent<string>): void {
     this.droppedData = dropData;
     this.totalTasks.splice(this.index_value, 1);
-<<<<<<< HEAD
     setTimeout(() => {
       this.droppedData = '';
-=======
-    setTimeout(( ) => {
-      this.droppedData = '';
-      
-    }, 2000);
-this.plus= !this.plus;
-console.log("drag ended");
->>>>>>> 12e28423ab4532dad4ecac01c120257346ee73b0
 
     }, 2000);
     this.plus = 'rotate';
