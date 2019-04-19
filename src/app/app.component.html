@@ -1,106 +1,79 @@
 <div class="container web_app" *ngIf="pageStatus == true">
-  <div class="row person_head ">
-    <div class="col-6">
-      <div class="head-deatils ">
-        <p class="person_name"> Hello floyd mullins</p>
-        <p class="task_details"> Your current task {{totalTasks.length}}</p>
+    <div class="row person_head ">
+      <div class="col-6">
+        <div class="head-deatils ">
+          <p class="person_name"> Hello floyd mullins</p>
+          <p class="task_details"> Your current task {{totalTasks.length}}</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="person_img">
+          <img src="../assets/images/man-388104_960_720.jpg" alt="" class="rounded-circle person_image">
+        </div>
       </div>
     </div>
-    <div class="col-6">
-      <div class="person_img">
-        <img src="../assets/images/man-388104_960_720.jpg" alt="" class="rounded-circle person_image">
-      </div>
+    <div class="fixed_div_circle">
+      <div class="circle_div" [ngClass]="{'circle_inside':circle_status === 'close' }"></div>
     </div>
-  </div>
-  <div class="fixed_div_circle">
-    <div class="circle_div" [ngClass]="{'circle_inside':circle_status === 'close' }"></div>
-  </div>
-  <div class="task_body">
-    <p *ngIf="totalTasks.length <= 0" class="no_activity"> No Activity Enterd</p>
-    <!-- <div mwlDraggable (dragEnd)="dragEnd($event, i)">Drag me!</div> -->
-    <div *ngFor="let list of totalTasks ;let i = index">
-      <div class="row" class="task_list" mwlDraggable dropData='i' (mousedown)='dragStart()' dragActiveClass="drag-active" (dragEnd)="dragEnd($event, i)"  draggable="true">
-        <div class="row">
-            
-          <div class="col-6">
-
-            <p class="task_name"> {{list}} </p>
-            <!-- <input *ngIf="taskName === list" type="text" name='task_Name' [(ngModel)]="taskName"> -->
-            <p class="due_date"> Due date is {{date | date: 'dd/MM/yyyy'}}</p>
-          </div>
-          <div class="col-6">
-            <div class="time_icon">
-              <img src="../assets/images/set-alarm.png" alt="" class="image-fluid alarm-icon">
+    <div class="task_body">
+      <p *ngIf="totalTasks.length <= 0" class="no_activity"> No Activity Enterd</p>
+      <div *ngFor="let list of totalTasks ;let i = index" (click)="onSelect(list , i)">
+        <div class="row" class="task_list"    mwlDraggable dropData='i' (mousedown)='dragStart()' dragActiveClass="drag-active" (dragEnd)="dragEnd($event, i)"  draggable="true">
+          <div class="row">  
+            <div class="col-6">
+              <p class="task_name"> {{list}} </p>
+              <p class="due_date"> Due date is {{date | date: 'dd/MM/yyyy'}}</p>
+            </div>
+            <div class="col-6">
+              <div class="time_icon">
+                <img src="../assets/images/set-alarm.png" alt="" class="image-fluid alarm-icon">
+              </div>
             </div>
           </div>
         </div>
-      
       </div>
-
+      <div *ngIf="dragStatus== false || dragStatus === !true" mwlDroppable>
+      </div>
     </div>
-    <div *ngIf="dragStatus== false || dragStatus === !true" mwlDroppable>
-
-    </div>
-  </div>
-  <div class="fixed-width">
-    <div class="inner-float">
-        <!-- <div >
-          <span [hidden]="droppedData" >Drop here</span>
-          <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
-        </div> -->
-        <div class="fix_add">
-          <div class="add_btn" (click)="gopage()"  [ngClass]="{'plusOne':plus == 'rotate'}" >
-              <img src="../assets/images/add_white.png" alt="" class="pluse-symble">
+    <div class="fixed-width">
+      <div class="fix_add">
+        <div class="add_btn" (click)="gopage()"  [ngClass]="{'plusOne':plus == 'rotate'}" >
+                <img src="../assets/images/add_white.png" alt="" class="pluse-symble">
+              </div>
+      </div>
+          <div class="fix_delete">
+              <div class="delete_btn"(click)="gopage()" mwlDroppable (drop)="onDrop($event)"
+              dragOverClass="drop-over-active"> <img src="../assets/images/delete_white.png" alt="" class="pluse-symble">
             </div>
-      </div>
-        <div class="fix_delete">
-            <div class="delete_btn"   (click)="gopage()" mwlDroppable (drop)="onDrop($event)"
-            dragOverClass="drop-over-active"> <img src="../assets/images/delete_white.png" alt="" class="pluse-symble">
-          </div>
-         </div>
-    
-     
-     
+           </div>
     </div>
   </div>
-
-</div>
-<!-- <div class="fixed-width">
-  <div class="circle-btn"></div>
-</div>
-<img src="../assets/images/add_white.png" alt="" class=> -->
-
-<div class=" text_area" *ngIf="pageStatus === !true">
-    <div class="fixed_div_rect">
-        <div class="rect_div circle_outside" [ngClass]="{'circle_outside':circle_status === 'open' }"></div>
-      </div>
-  <form action=" " (ngSubmit)="f.form.valid " #f="ngForm" novalidate>
-    <div class="modal-header">
-      <button type="button" class="close" (click)="onClose()" [ngClass]="{'delay': true}">&times;</button>
-    </div>
-    <!-- Modal body -->
-    <div class="modal-body">
-      <div class="form-group">
-
-
-        <textarea class="form-control" rows="5" id="comment" [(ngModel)]="taskName" name="text"
-          placeholder=" what you want to do" autofocus></textarea>
-        <div class="input-group-append">
-          <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
+  <div class=" text_area  " *ngIf="pageStatus === !true">
+      <div class="fixed_div_rect">
+          <div class="rect_div circle_outside" [ngClass]="{'circle_outside':circle_status === 'open' }"></div>
         </div>
-        <div class="input-group-append">
-          <img src="./../assets/images/calendar-smal.png" alt="" class="appednd-calendar">
+    <form action=" " (ngSubmit)="f.form.valid " #f="ngForm" novalidate>
+      <div  class="close" (click)="onClose() " [ngClass]="{'rotate':  rotateStatus == true}"><img src="../../../assets/images/close_small.png" alt=""></div>
+      <div class="enterArea animate fadeIn ">
+        <div class="form-group">
+  
+  
+          <textarea class="form-control" rows="5" id="comment" [(ngModel)]="taskName" name="text"
+            placeholder=" what you want to do" autofocus></textarea>
+          <div class="input-group-append">
+            <img src="./../assets/images/Attachment-small.png" alt="" class="appednd-brower">
+          </div>
+          <div class="input-group-append">
+            <img src="./../assets/images/calendar-smal.png" alt="" class="appednd-calendar">
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Modal footer -->
-    
-    <div class="modal-footer ">
-      <div class="add_task"  >
-        <button class=" btn btn-primary text-center "   [disabled]="f.form.pristine || f.form.invalid"
-          (click)="add_task(taskName)"><img src="../assets/images/add_white.png" alt=""></button>
+      <div class="modal-footer ">
+        <div class="add_task"  >
+          <button class=" btn  text-center "   [disabled]="f.form.pristine || f.form.invalid"
+            (click)="add_task(taskName)"><img src="../assets/images/add_white.png" alt=""></button>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 <router-outlet></router-outlet>
