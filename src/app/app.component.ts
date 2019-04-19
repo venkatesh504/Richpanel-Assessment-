@@ -61,7 +61,7 @@ export class AppComponent {
     {
       this.totalTasks.push(taskName);
     }
-
+ 
     this.pageStatus = true;
     this.circle_status = "close";
   }
