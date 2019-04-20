@@ -12,7 +12,7 @@ export class AppComponent {
   newTask = true;
   date = new Date(Date.now());
   constIndex: any;
-  // deleteEnable = false;
+  deleteEnable = false;
   taskName: any;
   pageStatus: boolean = true;
   droppedData: string;
@@ -67,14 +67,16 @@ export class AppComponent {
   }
   // After leaves the drag.
   dragEnd(event, index) {
-    // this.deleteEnable = false;
+    this.deleteEnable = false;
     this.index_value = index;
     console.log("end working");
     return this.index_value;
   }
   // Enable the delete button after drag
   dragStart() {
-    // this.deleteEnable = true;
+    this.deleteEnable = true;
+    console.log("starting");
+    
   }
   // Deleting the element from array after drop.
   onDrop({ dropData }: DropEvent<string>): void {

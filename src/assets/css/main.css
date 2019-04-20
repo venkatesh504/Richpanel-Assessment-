@@ -242,14 +242,14 @@ textarea.form-control {
 
 .drop-over-active {
     opacity: 1 !important;
-    transform: scale(1.5);
+    transform: scale(1.5) !important;
     background-color:red !important;
     z-index:99 !important ;
   position:  relative!important;
   margin: auto !important;
   width: 100%;
   }
-  
+
   /* @keyframes circle_div{
     0%   {transform: scale(1);transform-origin: center; }
     50%  {transform: scale(10.5);transform-origin: center;}
@@ -306,6 +306,12 @@ textarea.form-control {
   position: relative;
     margin: auto;
   }
+  .dragStart{
+    opacity: 1 !important;
+    transform: scale(1.0);
+
+  }
+  
   .circle_div {
     width:50px;
     height: 50px;
