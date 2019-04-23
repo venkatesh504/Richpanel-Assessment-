@@ -49,7 +49,6 @@ textarea.form-control {
     text-align: left !important;
 }
 .task_list{
-
     background: white;
     box-shadow: 0 0 5px -1px;
     padding: 10px;
@@ -188,7 +187,9 @@ textarea.form-control {
           transform: scale(1.3)
       }
    
+.dragSize{
 
+}
 
 
 
@@ -309,6 +310,7 @@ textarea.form-control {
   .dragStart{
     opacity: 1 !important;
     transform: scale(1.0);
+
 
   }
   

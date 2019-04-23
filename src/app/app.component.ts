@@ -17,6 +17,7 @@ export class AppComponent {
   pageStatus: boolean = true;
   droppedData: string;
   plus: any ;
+  drageSize:any;
   // pluserotate: boolean = false;
   circle_status: any = "none";
   index_value: any;
@@ -70,12 +71,21 @@ export class AppComponent {
     this.deleteEnable = false;
     this.index_value = index;
     console.log("end working");
+    this.drageSize = "nosize";
     return this.index_value;
+    
   }
   // Enable the delete button after drag
   dragStart() {
     this.deleteEnable = true;
+    this.drageSize = "size";
     console.log("starting");
+    console.log("drageSize is ",this.drageSize);
+    
+  }
+  mouseEnter(){
+  console.log("moving");
+  
     
   }
   // Deleting the element from array after drop.
@@ -86,8 +96,10 @@ export class AppComponent {
       this.droppedData = '';
     }, 1000);
     this.plus = 'rotate';
+    this.drageSize = "nosize";
   }
-  constructor() { }
+
+  constructor() {  }
 
   ngOnInit() {
   }
